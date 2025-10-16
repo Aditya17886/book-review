@@ -57,6 +57,7 @@ function Home() {
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">📚 ReadMate</div>
+       { localStorage.getItem('user') && <div>  Hii, { JSON.parse(localStorage.getItem('user'))?.email}</div>}
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/categories">Categories</Link></li>

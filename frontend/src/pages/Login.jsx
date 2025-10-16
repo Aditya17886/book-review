@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import "./Signin.css"; // optional if you want extra styling
+import "./Login.css"; // optional if you want extra styling
 
-function Signin() {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -40,7 +40,7 @@ function Signin() {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h2 className="login-title">Log  In</h2>
+        <h2 className="login-title">Sign Up</h2>
         <form onSubmit={handleSubmit} className="login-form">
           <input
             type="email"
@@ -57,14 +57,14 @@ function Signin() {
             required
           />
           {error && <p className="error">{error}</p>}
-          <button type="submit">Log In</button>
+          <button type="submit">Sign Up</button>
         </form>
-        <p  className="signup-link">
-          Don’t have an account? <Link to="/login">Sign Up</Link>
+         <p  className="signup-link">
+          Already have an account? <Link to="/signin">Login</Link>
         </p>
       </div>
     </div>
   );
 }
 
-export default Signin;
+export default Login;
