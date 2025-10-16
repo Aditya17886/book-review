@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 
 function Explore() {
   const [books, setBooks] = useState([]);
+  const BACKENDURL = process.env.REACT_APP_BACKEND_URL;
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch all books from backend
     axios
-      .get("http://localhost:5000/api/books")
+      .get(`${BACKENDURL}/api/books`)
       .then((res) => {
         setBooks(res.data);
         setLoading(false);
