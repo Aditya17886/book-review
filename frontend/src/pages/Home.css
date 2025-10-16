@@ -1,0 +1,172 @@
+/* ===== White and Yellow Theme ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff8dc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Hero Section ===== */
+.home {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.content h1 {
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.explore-btn {
+  background-color: #fff8dc;
+  color: #222;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #ffd633;
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+/* ===== Search Form Section ===== */
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 10px;
+}
+
+.search-section input {
+  padding: 10px 15px;
+  width: 250px;
+  font-size: 1rem;
+  border: 2px solid #ffcc00;
+  border-radius: 20px;
+  outline: none;
+}
+
+.search-section button {
+  padding: 10px 20px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-section button:hover {
+  background: #e6b800;
+}
+
+/* ===== Featured Books Section ===== */
+.section-heading {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #222;
+  font-weight: bold;
+}
+
+/* ===== Card Grid ===== */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+/* ===== Individual Card ===== */
+.card {
+  background: #fff8dc;
+  padding: 15px;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;         /* keeps consistent box height */
+  object-fit: contain;   /* shows full image without cutting */
+  background: #fff8dc;   /* fills empty space if aspect ratio differs */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+  color: #333;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.card button {
+  background: #ffcc00;
+  color: #222;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.card button:hover {
+  background: #e6b800;
+}

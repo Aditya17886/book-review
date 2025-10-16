@@ -1,0 +1,78 @@
+.about {
+  background-color: #fffdf5;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+/* Reuse your navbar style */
+.navbar {
+  background-color: #fff4cc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.navbar ul li a:hover {
+  color: #ffb400;
+}
+
+/* About content */
+.about-content {
+  margin: 80px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.about-details p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Button same as home */
+.explore-btn {
+  background-color: #ffb400;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  background-color: #e0a000;
+}

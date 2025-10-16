@@ -1,0 +1,191 @@
+.book-detail-container {
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.book-detail-card {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.detail-cover {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+.detail-info h1 {
+  margin: 0;
+  color: #222;
+  font-size: 1.6rem;
+}
+
+.detail-info h3 {
+  margin: 6px 0 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.short-desc {
+  margin-top: 12px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.rating {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* -----------------------------
+   REVIEWS SECTION
+--------------------------------*/
+.reviews-list {
+  margin-top: 18px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-item {
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.review-item strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.review-rating {
+  color: #f39c12;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.review-comment {
+  margin: 8px 0 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+.review-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 4px;
+  display: block;
+}
+
+/* -----------------------------
+   ADD REVIEW FORM
+--------------------------------*/
+.add-review-section {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.add-review-section h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-review-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-review-btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.submit-review-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* -----------------------------
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 720px) {
+  .book-detail-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-cover {
+    width: 200px;
+  }
+
+  .detail-info {
+    width: 100%;
+  }
+
+  .review-form {
+    width: 100%;
+  }
+}
