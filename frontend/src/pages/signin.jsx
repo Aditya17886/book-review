@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
-import "./signin.css"; // optional if you want extra styling
+import { useNavigate } from "react-router-dom";
+import "./Signin.css"; // optional if you want extra styling
 
-function Login() {
+function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -14,16 +14,24 @@ function Login() {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const { data } = await axios.post("http://localhost:5000/api/users/auth/login", {
         email,
         password,
       });
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      console.log(data);
+      
 
-      alert("Login successful!");
-      navigate("/");
+      if(data.success){
+        localStorage.setItem("token", data.token);
+        console.log(data.user);
+        
+        localStorage.setItem("user", JSON.stringify(data.user));
+        alert("Login successful!");
+        navigate("/");
+      }
+
+     
     } catch (err) {
       setError(err.response?.data?.message || "Invalid credentials");
     }
@@ -51,12 +59,12 @@ function Login() {
           {error && <p className="error">{error}</p>}
           <button type="submit">Sign In</button>
         </form>
-        <p className="signup-link">
+        {/* <p className="signup-link">
           Don’t have an account? <Link to="/register">Sign Up</Link>
-        </p>
+        </p> */}
       </div>
     </div>
   );
 }
 
-export default signin;
+export default Signin;
