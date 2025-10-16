@@ -9,11 +9,12 @@ function Home() {
   const [books, setBooks] = useState([]);
   const searchRef = useRef(null);
   const navigate = useNavigate();
+  const BACKENDURL = process.env.REACT_APP_BACKEND_URL;
 
   // ✅ Fetch all books from MongoDB
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/books")
+      .get(`${BACKENDURL}/api/books`)
       .then((res) => setBooks(res.data))
       .catch((err) => console.error("Error fetching books:", err));
   }, []);

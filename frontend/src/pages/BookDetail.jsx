@@ -8,6 +8,8 @@ function BookDetail() {
   const { id } = useParams(); // book id from url
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
+  const BACKENDURL = process.env.REACT_APP_BACKEND_URL;
+
 
   // review form state
   const [user, setUser] = useState("");
@@ -23,7 +25,7 @@ function BookDetail() {
   const fetchBook = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/books/${id}`);
+      const res = await axios.get(`${BACKENDURL}/api/books/${id}`);
       setBook(res.data);
     } catch (err) {
       console.error("Error fetching book:", err);
@@ -41,7 +43,7 @@ function BookDetail() {
 
     setSubmitting(true);
     try {
-      await axios.post(`http://localhost:5000/api/books/${id}/reviews`, {
+      await axios.post(`${BACKENDURL}/${id}/reviews`, {
         user: user || "Anonymous",
         comment: reviewText,
         rating,

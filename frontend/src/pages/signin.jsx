@@ -8,13 +8,15 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const BACKENDURL = process.env.REACT_APP_BACKEND_URL;
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/users/auth/signup", {
+      const { data } = await axios.post(`${BACKENDURL}/api/users/auth/signup`, {
         email,
         password,
       });
