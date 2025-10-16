@@ -45,16 +45,24 @@ function Home() {
     { title: "Harry Potter", author: "J.K. Rowling", cover: "https://m.media-amazon.com/images/I/81YOuOGFCJL.jpg" }
   ];
 
+  const handleLogout = () => {
+    localStorage.removeItem('user')
+    localStorage.removeItem('token')
+    alert("Logout Successfully!")
+    navigate('/')
+  }
+
   return (
     <div className="home">
       {/* Navbar */}
       <nav className="navbar">
         <div className="logo">📚 ReadMate</div>
+       { localStorage.getItem('user') && <div>  Hii, { JSON.parse(localStorage.getItem('user'))?.email}</div>}
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/categories">Categories</Link></li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/signin">Sign In</Link></li>
+         { localStorage.getItem("user") ? <li onClick={handleLogout} >Logout</li>  : <li><Link to="/signin">Sign In</Link></li> }
         </ul>
       </nav>
 

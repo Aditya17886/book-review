@@ -7,7 +7,9 @@ import Explore from "./pages/Explore";
 import Categories from "./pages/Categories";
 import About from "./pages/About";
 import BookDetail from "./pages/BookDetail"; // <-- for Read More page
-import signin from "./pages/signin";
+import Signin from "./pages/Signin";
+import Login from "./pages/Login";
+
 function App() {
   return (
     <Router>
@@ -16,11 +18,12 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/about" element={<About />} />
-        <Route path="/signin" element={<signin/>} />
+        <Route path="/signin" element={<Signin/>} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/book/:id" element={<BookDetail />} />
       </Routes>
     </Router>
   );
-}
+} 
 
 export default App;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import "./signin.css"; // optional if you want extra styling
+import "./Signin.css"; // optional if you want extra styling
 
-function Login() {
+function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -14,16 +14,24 @@ function Login() {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const { data } = await axios.post("http://localhost:5000/api/users/auth/signup", {
         email,
         password,
       });
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      console.log(data);
+      
 
-      alert("Login successful!");
-      navigate("/");
+      if(data.success){
+        localStorage.setItem("token", data.token);
+        console.log(data.user);
+        
+        localStorage.setItem("user", JSON.stringify(data.user));
+        alert("Login successful!");
+        navigate("/");
+      }
+
+     
     } catch (err) {
       setError(err.response?.data?.message || "Invalid credentials");
     }
@@ -32,7 +40,7 @@ function Login() {
   return (
     <div className="login-container">
       <div className="login-card">
-        <h2 className="login-title">Sign In</h2>
+        <h2 className="login-title">Log  In</h2>
         <form onSubmit={handleSubmit} className="login-form">
           <input
             type="email"
@@ -49,14 +57,14 @@ function Login() {
             required
           />
           {error && <p className="error">{error}</p>}
-          <button type="submit">Sign In</button>
+          <button type="submit">Log In</button>
         </form>
-        <p className="signup-link">
-          Don’t have an account? <Link to="/register">Sign Up</Link>
+        <p  className="signup-link">
+          Don’t have an account? <Link to="/login">Sign Up</Link>
         </p>
       </div>
     </div>
   );
 }
 
-export default signin;
+export default Signin;
